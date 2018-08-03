@@ -35,7 +35,7 @@ class LastAdapter(private val list: List<Any>,
     private val DATA_INVALIDATION = Any()
     private val callback = ObservableListCallback(this)
     private var recyclerView: RecyclerView? = null
-    private var inflater: LayoutInflater? = null
+    private lateinit var inflater: LayoutInflater
 
     private val map = mutableMapOf<Class<*>, BaseType>()
     private var layoutHandler: LayoutHandler? = null
@@ -138,15 +138,15 @@ class LastAdapter(private val list: List<Any>,
     }
 
     override fun getItemId(position: Int): Long {
-        if (hasStableIds()) {
+        return if (hasStableIds()) {
             val item = list[position]
             if (item is StableId) {
-                return item.stableId
+                item.stableId
             } else {
                 throw IllegalStateException("${item.javaClass.simpleName} must implement StableId interface.")
             }
         } else {
-            return super.getItemId(position)
+            super.getItemId(position)
         }
     }
 

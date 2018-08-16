@@ -2,7 +2,7 @@
 
 # LastAdapterX
 
-Docs about usage you may found in [**parent repo**](https://github.com/nitrico/LastAdapter). The only difference that class name was changed to LastAdapterX
+Docs about usage you may find in [**parent repo**](https://github.com/nitrico/LastAdapter). The only difference that class name was changed to LastAdapterX
 
 ## License
 
